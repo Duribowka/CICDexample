@@ -5,14 +5,20 @@ on:
     branches:
       - main
 
+env:
+  PROD_DIR: C:\Users\sboro\Desktop\CICDAssignment\Prod\CICDexample
+
 jobs:
   deploy:
     runs-on: self-hosted
 
     steps:
-      - name: Get repository
-        uses: actions/checkout@v7
+      - name: Update production
+        shell: cmd
+        run: |
+          git -C "%PROD_DIR%" fetch origin
+          git -C "%PROD_DIR%" reset --hard origin/main
 
       - name: Run calculator
         shell: cmd
-        run: python main.py
+        run: python "%PROD_DIR%\main.py"
