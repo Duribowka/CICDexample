@@ -1,0 +1,24 @@
+name: Calculator CI
+
+on:
+  push:
+    branches:
+      - dev
+      - prerelease
+
+  pull_request:
+    branches:
+      - prerelease
+      - main
+
+jobs:
+  test:
+    runs-on: self-hosted
+
+    steps:
+      - name: Get repository
+        uses: actions/checkout@v7
+
+      - name: Run tests
+        shell: cmd
+        run: python tests.py
