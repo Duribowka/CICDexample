@@ -1,0 +1,17 @@
+name: Calculator CD
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+
+    steps:
+      - name: Get repository
+        uses: actions/checkout@v7
+
+      - name: Run calculator
+        run: python main.py
