@@ -2,10 +2,21 @@ from main import addition, subtraction, multiplication, division
 
 
 def test():
-    assert addition(10, 5) == 15
-    assert subtraction(10, 5) == 5
-    assert multiplication(10, 5) == 50
-    assert division(10, 5) == 2
+    # Addition
+    assert addition(2, 3) == 5
+    assert addition(-2, 3) == 1
+
+    # Subtraction
+    assert subtraction(5, 3) == 2
+    assert subtraction(3, 5) == -2
+
+    # Multiplication
+    assert multiplication(3, 4) == 12
+    assert multiplication(-2, 5) == -10
+
+    # Division
+    assert division(10, 2) == 5
+    assert division(7, 2) == 3.5
 
 
 
