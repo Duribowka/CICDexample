@@ -1,9 +1,9 @@
-from main import addition, substraction, multiplication, division
+from main import addition, subtraction, multiplication, division
 
 
 def test():
     assert addition(10, 5) == 15
-    assert substraction(10, 5) == 5
+    assert subtraction(10, 5) == 5
     assert multiplication(10, 5) == 50
     assert division(10, 5) == 2
 
